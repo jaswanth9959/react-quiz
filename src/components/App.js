@@ -8,6 +8,7 @@ import NextButton from "./NextButton";
 import Progress from "./Progress";
 import FinalScreen from "./FinalScreen";
 import Timer from "./Timer";
+import ques from "./questions";
 function App() {
   const initialState = {
     questions: [],
@@ -78,8 +79,8 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       dispatch({ type: "dataFetching" });
-      const data = await fetch("http://localhost:5000/questions");
-      const res = await data.json();
+      // const data = await fetch("http://localhost:5000/questions");
+      const res = ques;
       dispatch({ type: "dataReceived", payload: res });
     };
 
